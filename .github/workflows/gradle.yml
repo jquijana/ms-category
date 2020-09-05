@@ -27,9 +27,6 @@ jobs:
           name: Package
           path: build/libs
 
-      - name: Checkout
-        uses: actions/checkout@master
-
       - name: Setup GCP Service Account
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
