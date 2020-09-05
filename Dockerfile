@@ -5,3 +5,6 @@ RUN mkdir /app
 COPY build/libs/*.jar /app/ms-category-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/ms-category-0.0.1-SNAPSHOT.jar"]
+
+
+
