@@ -35,7 +35,6 @@ jobs:
           export_default_credentials: true
 
       - name: Configure Docker
-        needs: build
         run: |
           gcloud auth configure-docker
 
@@ -48,7 +47,6 @@ jobs:
           docker push gcr.io/${{ secrets.GCP_ID }}/tucompras:latest
 
       - name: Deploy
-        needs: Push
         run: |
           gcloud run deploy tucompras \
           --region us-east1 \
