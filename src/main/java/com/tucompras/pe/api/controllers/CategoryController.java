@@ -28,4 +28,10 @@ public class CategoryController {
   private Mono<Void> delete(@PathVariable("id") String id) {
     return categoryService.delete(id);
   }
+
+  @GetMapping("/demo")
+  private Flux<CategoryDTO> getDemo() {
+    return categoryService.findAll();
+  }
+
 }
