@@ -41,17 +41,17 @@ jobs:
 
       - name: Build
         run: |
-          docker build -t gcr.io/${{ secrets.GCP_ID }}/tucompras:latest .
+          docker build -t gcr.io/${{ secrets.GCP_ID }}/ms-category:latest .
 
       - name: Push
         run: |
-          docker push gcr.io/${{ secrets.GCP_ID }}/tucompras:latest
+          docker push gcr.io/${{ secrets.GCP_ID }}/ms-category:latest
 
       - name: Deploy
         run: |
-          gcloud run deploy tucompras \
+          gcloud run deploy ms-category \
           --region us-east1 \
-          --image gcr.io/${{ secrets.GCP_ID }}/tucompras \
+          --image gcr.io/${{ secrets.GCP_ID }}/ms-category \
           --platform managed \
           --allow-unauthenticated \
           --project ${{ secrets.GCP_ID }}
